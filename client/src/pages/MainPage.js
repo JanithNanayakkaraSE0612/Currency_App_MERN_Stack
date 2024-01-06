@@ -1,6 +1,9 @@
-import React from 'react'
+import React ,{useState}from 'react'
 
 export default function MainPage() {
+  //state for the form fills
+
+  
   return (
     <div>
       <h1 className='lg:mx-32 text-5xl font-bold text-green-500'>Convert Your Currencies Today</h1>
@@ -47,7 +50,7 @@ export default function MainPage() {
        dark:focus:ring-green-500 dark:focus:border-green-500" placeholder='Amount in source currency' required/>
   </div>
         <button className='bg-green-600 hover:bg-green-700 text-white 
-        font-bold py-2 px-4 rounded-md'>Get the target Currency</button>
+        font-medium py-2 px-4 rounded-md'>Get the target Currency</button>
           </form>
         </section>
       </div>
