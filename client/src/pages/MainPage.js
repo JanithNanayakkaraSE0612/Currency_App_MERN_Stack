@@ -2,8 +2,12 @@ import React ,{useState}from 'react'
 
 export default function MainPage() {
   //state for the form fills
+    const [date , setDate] = useState(null);
+    const [sourceCurrency , setSourceCurrency] = useState("");
+    const [targetCurrency , setTargetCurrency] = useState("");
+    const [amountInSourceCurrency , setAmountInSourceCurrency] = useState(0);
+    const [amountInTargetCurrency , setAmountInTargetCurrency] = useState(0);
 
-  
   return (
     <div>
       <h1 className='lg:mx-32 text-5xl font-bold text-green-500'>Convert Your Currencies Today</h1>
