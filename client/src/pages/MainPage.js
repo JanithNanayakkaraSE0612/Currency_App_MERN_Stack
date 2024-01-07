@@ -7,6 +7,7 @@ export default function MainPage() {
     const [targetCurrency , setTargetCurrency] = useState("");
     const [amountInSourceCurrency , setAmountInSourceCurrency] = useState(0);
     const [amountInTargetCurrency , setAmountInTargetCurrency] = useState(0);
+    const [currencyName , setCurrencyName] = useState([]);
     //handle submit Metohd
     const handleSubmit =(e) =>{
       e.preventDefault();
@@ -17,10 +18,12 @@ export default function MainPage() {
         try {
           const response = await axios.get(
             "http://localhost:5000/getAllCurrencies");
+            setCurrencyName(response.data);
         } catch (error) {
           console.error(error);
         }
       }
+      getCurrencyNames();
     },[])
   return (
     <div>
