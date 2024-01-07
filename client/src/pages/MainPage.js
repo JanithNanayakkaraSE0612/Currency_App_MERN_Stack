@@ -9,11 +9,19 @@ export default function MainPage() {
     const [amountInTargetCurrency , setAmountInTargetCurrency] = useState(0);
     const [currencyName , setCurrencyName] = useState([]);
     //handle submit Metohd
-    const handleSubmit =(e) =>{
+    const handleSubmit =async (e) =>{
       e.preventDefault();
       console.log(sourceCurrency)
       try {
-        
+        const response = await axios.get(
+          "http://localhost:5000/convert",{
+            params:{
+              date,sourceCurrency,targetCurrency,amountInSourceCurrency,
+
+            },
+          }
+        );
+         setAmountInTargetCurrency(response.data);
       } catch (error) {
         console.log(error);
       }
@@ -91,6 +99,7 @@ export default function MainPage() {
           </form>
         </section>
       </div>
+      {amountInTargetCurrency}
     </div>
   )
 }
