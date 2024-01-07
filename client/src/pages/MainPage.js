@@ -99,9 +99,9 @@ export default function MainPage() {
           </form>
         </section>
       </div>
-      {amountInSourceCurrency}{currencyName[setSourceCurrency]} is equal to {" "}
-      
-      {amountInTargetCurrency}
+      {amountInSourceCurrency}{currencyName[sourceCurrency]} is equal to {" "}
+
+      {amountInTargetCurrency} {currencyName[targetCurrency]}
     </div>
   )
 }
