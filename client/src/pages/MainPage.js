@@ -11,6 +11,12 @@ export default function MainPage() {
     //handle submit Metohd
     const handleSubmit =(e) =>{
       e.preventDefault();
+      console.log(sourceCurrency)
+      try {
+        
+      } catch (error) {
+        console.log(error);
+      }
     };
 
     useEffect(()=>{
@@ -66,6 +72,11 @@ export default function MainPage() {
       dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
        dark:focus:ring-green-500 dark:focus:border-green-500 " >
         <option value="">Select Target currency</option>
+        {Object.keys(currencyName).map((currency)=>(
+            <option className='p-1' key={currency} value={currency}>
+              {currencyName[currency]}
+            </option>
+        ))}
        </select>
   </div>
   <div className="mb-4">
